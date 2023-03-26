@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>[銀河・マイティ対応] 麻雀の待ち判定・全アガリ形列挙</title>
+</head>
+
+<body>
+	<h1>[銀河・マイティ対応] 麻雀の待ち判定・全アガリ形列挙</h1>
+	<form action="/" method="POST" enctype="multipart/form-data">
+		<div>
+			<label for="name">ID: </label>
+			<input type="text" id="name" name="name" placeholder="例: 11m678s56p33z56g11t">
+		</div>
+		<div>
+			<input type="submit" value="OK">
+		</div>
+	</form>
+	<ul>
+		<li>麻雀の手牌を入力すると、待ちを判定し、全アガリ形を (現在は文字で) 列挙します。mpsz表記で13牌を入力してください。</li>
+		<ul>
+			<li>1～9マン: 1m～9m</li>
+			<li>1～9ピン: 1p～9p</li>
+			<li>1～9ソー: 1s～9s</li>
+			<li>東南西北白發中: 1z～7z</li>
+		</ul>
+		<li><a href="https://majyan-item.com/galaxy/">銀河麻雀</a>の銀河牌
+			(字牌以外)・オールマイティ牌にも対応しています。下記結果に表示されますが、使用しない場合は無視してください。</li>
+		<ul>
+			<li>銀河牌の1～9: 1g～9g</li>
+			<li>オールマイティ牌: 1t (下記結果では「mt」で表されます)</li>
+		</ul>
+	</ul>
+	<h2>判定結果</h2>
+	<p><b>{{ message }}</b></p>
+	<p>{% autoescape false %}
+		{{ message1 | replace("\n", "<br />")}}
+		<br />
+		{% endautoescape %}
+	</p>
+	<h2>補足</h2>
+	<ul>
+		<li>このアプリの強み: 銀河牌やマイティ牌が複数枚含まれる複雑な手牌であっても、<b>1秒以内</b>に結果が得られます。</li>
+		<li>現在β版であり、結果に間違いが含まれる可能性やバグが存在する可能性があります。</li>
+		<li>以下は今後改善予定です。</li>
+		<ul>
+			<li>4面子1雀頭形のみ対応しています。七対子・国士無双は未対応です。</li>
+			<li>5枚目の牌を待つような待ちがカウントされてしまっています。</li>
+			<li>銀河牌の字牌は未対応です。</li>
+			<li>判定結果が文字列で得られます。牌の画像に改善する予定です。</li>
+		</ul>
+	</ul>
+	<h2>更新履歴</h2>
+	<ul>
+		<li>2023/03/26: 公開 (ver 0.0)
+	</ul>
+	</br>
+	<p>サイト最終更新: 2023/03/26 (ver 0.0)</p>
+	<p>公開: 2023/03/26</p>
+	<p>作成者: <a href="https://twitter.com/Tomii9273">@Tomii9273</a></p>
+</body>
+
+</html>
