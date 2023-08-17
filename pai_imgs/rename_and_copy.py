@@ -1,7 +1,7 @@
 import shutil
 
-kinds_before=["man", "pin", "sou", "ji"]
-kinds_after=["m", "p", "s", "z"]
+kinds_before = ["man", "pin", "sou", "ji"]
+kinds_after = ["m", "p", "s", "z"]
 
 for i in range(4):
     rng = range(1, 10) if i != 3 else range(1, 8)  # 字牌のみ7種類

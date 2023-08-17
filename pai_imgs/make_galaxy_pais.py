@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-pai_names = [f'{num}{kind}' for num in range(1, 10) for kind in ["m", "p", "s"]] + [f'{num}z' for num in range(1, 8)]
+pai_names = [f"{num}{kind}" for num in range(1, 10) for kind in ["m", "p", "s"]] + [f"{num}z" for num in range(1, 8)]
 
 for pai_name in pai_names:
     file_name = f"imgs/{pai_name}.png"
